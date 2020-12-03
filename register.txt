@@ -1,0 +1,103 @@
+import React from "react";
+import Axios from "axios";
+import { Redirect } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
+
+const URL = "http://localhost:2000/";
+
+class RegisterPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            doneReg: false,
+        };
+    }
+    
+    register = () => {
+        let username = this.refs.username.value;
+        let password = this.refs.pass.value;
+        let email = this.refs.email.value;
+        console.log(username, password, email)
+
+        if (!username || !password || !email) return alert("Please input all form");
+
+        Axios.get(`${URL}users`, { params: { username } })
+            .then((res) => {
+                if (res.data.length !== 0) return alert("Username already exist");
+
+                Axios.post(`${URL}users`, {
+                    username,
+                    password,
+                    email
+                })
+                    .then((res2) => {
+                        console.log(res2.data);
+                        this.setState({ doneReg: true });
+                    })
+                    .catch((err2) => console.log(err2));
+            })
+            .catch((err) => console.log(err));
+
+        this.refs.username.value = "";
+        this.refs.pass.value = "";
+    };
+
+    render() {
+        if (this.state.doneReg) return <Redirect to="/login" />;
+
+        return (
+            <div>
+                <div style={styles.container}>
+                    <h1>Register</h1>
+                    <Form.Control
+                        style={styles.input}
+                        type="text"
+                        ref="username"
+                        placeholder="Username"
+                    />
+                    <Form.Control
+                        style={styles.input}
+                        type="password"
+                        ref="pass"
+                        placeholder="Password"
+                    />
+                    <Form.Control
+                        style={styles.input}
+                        type="email"
+                        ref="email"
+                        placeholder="Email"
+                    />
+                    <div
+                        style={{
+                            ...styles.input,
+                            display: "flex",
+                            justifyContent: "flex-end",
+                        }}
+                    >
+                        <Button style={{}} onClick={this.register}>
+                            Register
+            </Button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+const styles = {
+    container: {
+        margin: "5% auto",
+        backgroundColor: "lightblue",
+        width: "25%",
+        padding: "1%",
+        borderRadius: "5px",
+    },
+    input: {
+        marginTop: "30px",
+    },
+    button: {
+        margin: "30px auto 0",
+    },
+};
+
+export default RegisterPage;

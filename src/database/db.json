@@ -513,32 +513,14 @@
       "username": "admin",
       "password": "admin",
       "role": "admin",
-      "email": "admin@shoes.com",
-      "cart": []
+      "email": "admin@shoes.com"
     },
     {
       "id": 2,
       "username": "user",
       "password": "user",
       "role": "user",
-      "email": "user@gmail.com",
-      "cart": {
-        "name": "NIKE AIR ZOOM-TYPE",
-        "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-AIR_ZOOM_TYPE-BLACK_SUMMIT_WHITE_MENTA_ORANGE_TRANCE-1.jpg",
-        "brand": "NIKE",
-        "price": 2500000,
-        "size": 39,
-        "qty": 3,
-        "total": 7500000
-      }
-    },
-    {
-      "username": "frengky",
-      "password": "frengky1!",
-      "email": "frengky@gmail.com",
-      "role": "user",
-      "id": 3,
-      "cart": []
+      "email": "user@gmail.com"
     }
   ],
   "transaction_history": [
