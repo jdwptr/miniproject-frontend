@@ -1,0 +1,3 @@
+di homepage dari gambar yg ada di DB slider
+Title nya juga dimunculin
+styling nys juga

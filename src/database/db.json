@@ -521,6 +521,27 @@
       "password": "user",
       "role": "user",
       "email": "user@gmail.com"
+    },
+    {
+      "username": "mariejane",
+      "password": "123456^",
+      "role": "user",
+      "email": "mj@gmail.com",
+      "id": 3
+    },
+    {
+      "username": "anna123",
+      "password": "123456^",
+      "role": "user",
+      "email": "anna@gmail.com",
+      "id": 4
+    },
+    {
+      "username": "elsa123",
+      "password": "123!@#",
+      "role": "user",
+      "email": "elsa@gmail.com",
+      "id": 5
     }
   ],
   "transaction_history": [

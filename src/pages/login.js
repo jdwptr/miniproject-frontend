@@ -3,14 +3,15 @@ import Axios from 'axios'
 import {
     InputGroup,
     FormControl,
-    Button
+    Button,
+    Modal
 } from 'react-bootstrap'
 
 // import connect dr reactredux
 import { connect } from 'react-redux'
 
 // import action login dari folder action
-import { login } from '../action/userAction'
+import { login } from '../action'
 
 // import redirect dr reactrouterdom
 import { Redirect } from 'react-router-dom'
@@ -21,16 +22,17 @@ class Login extends React.Component {
         this.state = {
             users: {},
             visibility: false,
-            loginError: false
+            loginErr: [false, ""]
         }
     }
 
     btnLogin = () => {
+        const { loginErr } = this.state
         let username = this.refs.username.value
         let password = this.refs.password.value
         console.log(username, password)
 
-        if (!username || !password) return alert('Please type your username and password below')
+        if (!username || !password) return this.setState({loginErr: [true, "Please Input Username & Email Correctly"]})
 
         Axios.get(`http://localhost:2000/users?username=${username}&password=${password}`)
             .then((res) => {
@@ -50,9 +52,10 @@ class Login extends React.Component {
     }
 
     render() {
+        console.log(this)
         // ditaruh disini supaya gausah manggil manggil lagi dibawah
         // ini namanya object destructuring u/ local state
-        const { visibility, loginError } = this.state
+        const { visibility, loginErr } = this.state
 
         // jd abis login, kalo username nya ada, ke redirect ke home dan UserName nya ganti
         if (this.props.username) return <Redirect to='/' />
@@ -93,10 +96,24 @@ class Login extends React.Component {
                         </InputGroup>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Button variant='dark' onClick={this.btnLogin}>HELLO SNEAKS</Button>
+                        <Button variant='dark' onClick={this.btnLogin}>
+                            HELLO SNEAKS<i className="far fa-user" style={{marginLeft: '10px'}}></i>
+                        </Button>
                     </div>
                 </div>
+                    <Modal show={loginErr[0]} onHide={() => this.setState ({loginErr: [false, ""]})}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>WARNING !</Modal.Title>
+                        </Modal.Header>
 
+                        <Modal.Body>{loginErr[1]}</Modal.Body>
+
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => this.setState ({loginErr: [false, ""]})}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
             </div>
         )
     }
@@ -126,12 +143,18 @@ const styles = {
     }
 }
 
+// mapstatetoprops itu mereturn username, value nya dia ambil dari data global state
+// di global state itu ada allReducers, allReducers kan ada combineReducers, di combineReducers =>
+// ada userReducer
+// user bentuknya userReducer, berarti isinya object, krn userReducer mereturn object
+// maknaya ngambilnya dr state(dr globalstate).user.username
 const mapStateToProps = (state) => {
     return {
         username: state.user.username
     }
 }
 
+// jadi ngambil datanya seperti itu di atas, lalu di connect disini
 export default connect(mapStateToProps, { login })(Login)
 // login yg dlm {} itu function login yg di action
 // Login yg di dalam () itu nama class yang diatas

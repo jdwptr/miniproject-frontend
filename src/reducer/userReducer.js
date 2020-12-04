@@ -5,7 +5,9 @@ const INITIAL_STATE = {
     email: ''
 }
 
-const userReducer = (state = INITIAL_STATE, action) => {
+// yg dimasukkan ke redux yg hanya akan dipakai saja.
+
+export const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'LOG_IN' :
             return {
@@ -13,6 +15,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 username: action.payload.username,
                 password: action.payload.password,
                 role: action.payload.role,
+                email: action.payload.email,
             }
 
         case 'LOG_OUT' :
@@ -21,4 +24,3 @@ const userReducer = (state = INITIAL_STATE, action) => {
             return state
     }            
 }
-export default userReducer

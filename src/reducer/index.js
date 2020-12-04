@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux'
 
 // import user reducer
-import userReducer from './userReducer'
+import { userReducer } from './userReducer'
 
 // combine semua reducer
 const allReducers = combineReducers ({

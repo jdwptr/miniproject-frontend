@@ -5,12 +5,28 @@ import Navigation from './components/navbar'
 
 import {Switch, Route} from 'react-router-dom'
 
+// import connect
+import { connect } from 'react-redux'
+
+// import login dari actions
+import { login } from './action/userAction'
+
 // import halaman dari pages
 import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
+import Axios from 'axios'
 
 class App extends React.Component {
+  // ini tempat u/ ngekeep login nya di localstorage jd kesimpen
+  componentDidMount () {
+    Axios.get(`http://localhost:2000/users?username=${localStorage.getItem('username')}`)
+      .then((res) => {
+        console.log(res.data[0])
+        this.props.login(res.data[0])
+      })
+      .catch((err) => console.log(err))
+  }
   render () {
     return (
       <div>
@@ -25,4 +41,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default connect (null, {login}) (App)
