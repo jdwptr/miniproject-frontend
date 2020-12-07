@@ -27,7 +27,7 @@ class Login extends React.Component {
     }
 
     btnLogin = () => {
-        const { loginErr } = this.state
+        // const { loginErr } = this.state
         let username = this.refs.username.value
         let password = this.refs.password.value
         console.log(username, password)
