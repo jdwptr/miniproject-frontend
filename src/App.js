@@ -15,6 +15,7 @@ import { login } from './action/userAction'
 import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
+import DetailBeli from './pages/detailbeli'
 import Axios from 'axios'
 
 class App extends React.Component {
@@ -34,7 +35,8 @@ class App extends React.Component {
           <Switch>
             <Route path= '/' component={Home} exact/>
             <Route path='/login' component={Login}/>
-            <Route path='/register' component={Register}/>  
+            <Route path='/register' component={Register}/>
+            <Route path='/detail' component={DetailBeli}/>
           </Switch>
       </div>
     )
