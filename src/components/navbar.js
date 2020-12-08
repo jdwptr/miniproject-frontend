@@ -27,12 +27,12 @@ class Navigation extends React.Component {
             <Navbar expand="lg" fixed='top' style={{height: '70px', backgroundColor: 'RGBA(176,176,176,0.4)'}}>
                 <Navbar.Brand>
                     <Image src={LOGO.default} alt='logo' style={{height: '50px', marginRight: '20px'}}></Image>
-                    <strong style={{color: '#cad2c5'}}>SNEAKS SHOES STORE</strong>
+                    <strong style={{color: 'black'}}>SNEAKS SHOES STORE</strong>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link as={Link} to='/' style={{color: '#cad2c5'}}>Home</Nav.Link>
+                        <Nav.Link as={Link} to='/' style={{color: 'black'}}>Home</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 <Dropdown style={{marginRight: '40px'}}>
