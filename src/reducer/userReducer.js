@@ -2,7 +2,9 @@ const INITIAL_STATE = {
     username: '',
     password: '',
     role: '',
-    email: ''
+    email: '',
+    id: '',
+    cart: []
 }
 
 // yg dimasukkan ke redux yg hanya akan dipakai saja.
@@ -16,6 +18,8 @@ export const userReducer = (state = INITIAL_STATE, action) => {
                 password: action.payload.password,
                 role: action.payload.role,
                 email: action.payload.email,
+                id: action.payload.id,
+                cart: action.payload.cart
             }
 
         case 'LOG_OUT' :

@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap'
 
 // import logo
-import { LOGO } from '../assets/index'
+import { LOGO1 } from '../assets/index'
 
 import { Link } from 'react-router-dom'
 
@@ -26,7 +26,7 @@ class Navigation extends React.Component {
         return (
             <Navbar expand="lg" fixed='top' style={{height: '70px', backgroundColor: 'RGBA(176,176,176,0.4)'}}>
                 <Navbar.Brand>
-                    <Image src={LOGO.default} alt='logo' style={{height: '50px', marginRight: '20px'}}></Image>
+                    <Image src={LOGO1.default} alt='logo' style={{height: '50px', marginRight: '20px'}}></Image>
                     <strong style={{color: 'black'}}>SNEAKS SHOES STORE</strong>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
