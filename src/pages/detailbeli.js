@@ -65,6 +65,7 @@ class DetailBeli extends React.Component {
             brand: dataProd.brand,
             colour: dataProd.colour,
             price: dataProd.price,
+            stock: dataProd.stock,
             size: size,
             qty: total,
             totalPrice: total * dataProd.price

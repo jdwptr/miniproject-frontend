@@ -34,8 +34,11 @@ class Navigation extends React.Component {
                     <Nav className="mr-auto">
                         <Nav.Link as={Link} to='/' style={{color: 'black'}}>Home</Nav.Link>
                     </Nav>
+                    <Nav className="mr-auto">
+                        <Nav.Link as={Link} to='/cart' style={{color: 'black', marginRight: '120px', marginLeft: '0px'}}><i class="fas fa-shopping-cart"></i>Cart</Nav.Link>
+                    </Nav>
                 </Navbar.Collapse>
-                <Dropdown style={{marginRight: '40px'}}>
+                <Dropdown style={{marginLeft: '500px'}}>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                             {this.props.username ? this.props.username : 'Username'}
                             {/* Userame, jd kalo gagal login ga berubah jd nama kita, tetep Username di dropdownnya */}

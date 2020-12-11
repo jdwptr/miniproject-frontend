@@ -537,53 +537,10 @@
           "brand": "NIKE",
           "colour": "WHITE/BLUE FURY-OPTI YELLOW-DIGITAL PINK",
           "price": 1780000,
-          "size": 40,
-          "qty": 1,
-          "totalPrice": 1780000
-        },
-        {
-          "name": "NIKE W AIR MAX 90",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-W_AIR_MAX_90-WHITE_PARTICLE_GREY_ROSE_BLACK-2.jpg",
-          "category": "Women, Sport, Sneaker",
-          "brand": "NIKE",
-          "colour": "WHITE/PARTICLE GREY-ROSE-BLACK",
-          "price": 1987300,
-          "size": 41,
-          "qty": 1,
-          "totalPrice": 1987300
-        },
-        {
-          "name": "NIKE KYRIE 6",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-KYRIE_6-WHITE_BLUE_FURY_OPTI_YELLOW_DIGITAL_PINK-2.jpg",
-          "category": "Men, Sport, Sneaker",
-          "brand": "NIKE",
-          "colour": "WHITE/BLUE FURY-OPTI YELLOW-DIGITAL PINK",
-          "price": 1780000,
           "size": 38,
           "qty": 1,
-          "totalPrice": 1780000
-        },
-        {
-          "name": "JORDAN WESTBROOK ONE TAKE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/JORDAN_WESTBROOK_ONE_TAKE-WHITE_WHITE_BLACK_RAGE_GREEN-2.jpg",
-          "category": "Men, Sport, Sneaker",
-          "brand": "JORDAN",
-          "colour": "WHITE/WHITE-BLACK-RAGE GREEN",
-          "price": 1500000,
-          "size": 39,
-          "qty": 1,
-          "totalPrice": 1500000
-        },
-        {
-          "name": "NIKE WMNS NIKE AIR MAX 90 SLIDE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/WMNS_NIKE_AIR_MAX_90_SLIDE-WHITE_SMOKE_GREY_ROSE_LT_SMOKE_GREY-2.jpg",
-          "category": "Women, Sandals, Flip Flop ",
-          "brand": "NIKE",
-          "colour": "WHITE/SMOKE GREY-ROSE-LT SMOKE GREY",
-          "price": 879650,
-          "size": 40,
-          "qty": 1,
-          "totalPrice": 879650
+          "totalPrice": 1780000,
+          "total": 1780000
         },
         {
           "name": "NIKE WMNS NIKE AIR MAX 90 SLIDE",
@@ -595,6 +552,17 @@
           "size": 40,
           "qty": 2,
           "totalPrice": 1759300
+        },
+        {
+          "name": "NIKE AIR ZOOM-TYPE",
+          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-AIR_ZOOM_TYPE-BLACK_SUMMIT_WHITE_MENTA_ORANGE_TRANCE-2.jpg",
+          "category": "Men, Sport, Sneaker",
+          "brand": "NIKE",
+          "colour": "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
+          "price": 2500000,
+          "size": 40,
+          "qty": 1,
+          "totalPrice": 2500000
         }
       ]
     },
