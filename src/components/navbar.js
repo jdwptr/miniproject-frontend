@@ -47,7 +47,10 @@ class Navigation extends React.Component {
                             {/* bikin supaya abis login kolom nya kd logout */}
                             {this.props.username
                             ?
-                            <Dropdown.Item onClick={this.btnLogout}>Log out</Dropdown.Item>
+                            <div>
+                                <Dropdown.Item onClick={this.btnLogout}>Log out</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/history">History</Dropdown.Item>
+                            </div>
                             :
                             <>
                             <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>

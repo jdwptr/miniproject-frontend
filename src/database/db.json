@@ -531,38 +531,71 @@
       "id": 3,
       "cart": [
         {
-          "name": "NIKE KYRIE 6",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-KYRIE_6-WHITE_BLUE_FURY_OPTI_YELLOW_DIGITAL_PINK-2.jpg",
-          "category": "Men, Sport, Sneaker",
-          "brand": "NIKE",
-          "colour": "WHITE/BLUE FURY-OPTI YELLOW-DIGITAL PINK",
-          "price": 1780000,
-          "size": 38,
-          "qty": 1,
-          "totalPrice": 1780000,
-          "total": 1780000
-        },
-        {
-          "name": "NIKE WMNS NIKE AIR MAX 90 SLIDE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/WMNS_NIKE_AIR_MAX_90_SLIDE-WHITE_SMOKE_GREY_ROSE_LT_SMOKE_GREY-2.jpg",
-          "category": "Women, Sandals, Flip Flop ",
-          "brand": "NIKE",
-          "colour": "WHITE/SMOKE GREY-ROSE-LT SMOKE GREY",
-          "price": 879650,
-          "size": 40,
-          "qty": 2,
-          "totalPrice": 1759300
-        },
-        {
           "name": "NIKE AIR ZOOM-TYPE",
           "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-AIR_ZOOM_TYPE-BLACK_SUMMIT_WHITE_MENTA_ORANGE_TRANCE-2.jpg",
           "category": "Men, Sport, Sneaker",
           "brand": "NIKE",
           "colour": "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
           "price": 2500000,
+          "stock": [
+            {
+              "code": 38,
+              "total": 10
+            },
+            {
+              "code": 39,
+              "total": 10
+            },
+            {
+              "code": 40,
+              "total": 10
+            },
+            {
+              "code": 41,
+              "total": 10
+            },
+            {
+              "code": 42,
+              "total": 10
+            }
+          ],
           "size": 40,
           "qty": 1,
-          "totalPrice": 2500000
+          "totalPrice": 2500000,
+          "total": 2500000
+        },
+        {
+          "name": "JORDAN WESTBROOK ONE TAKE",
+          "image": "https://kickz.akamaized.net/en/media/images/p/1200/JORDAN_WESTBROOK_ONE_TAKE-WHITE_WHITE_BLACK_RAGE_GREEN-2.jpg",
+          "category": "Men, Sport, Sneaker",
+          "brand": "JORDAN",
+          "colour": "WHITE/WHITE-BLACK-RAGE GREEN",
+          "price": 1500000,
+          "stock": [
+            {
+              "code": 38,
+              "total": 5
+            },
+            {
+              "code": 39,
+              "total": 3
+            },
+            {
+              "code": 40,
+              "total": 15
+            },
+            {
+              "code": 41,
+              "total": 9
+            },
+            {
+              "code": 42,
+              "total": 7
+            }
+          ],
+          "size": 40,
+          "qty": 1,
+          "totalPrice": 1500000
         }
       ]
     },
@@ -583,144 +616,122 @@
       "cart": []
     }
   ],
-  "transaction_history": [
+  "history": [
     {
-      "userID": 2,
-      "date": "7/6/2020, 2:51:50 PM",
-      "total": 2500000,
-      "products": [
+      "username": "mariejane",
+      "date": "12/11/2020, 3:10:09 PM",
+      "total": 1987300,
+      "product": [
         {
-          "name": "NIKE AIR ZOOM-TYPE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-AIR_ZOOM_TYPE-BLACK_SUMMIT_WHITE_MENTA_ORANGE_TRANCE-1.jpg",
+          "name": "NIKE W AIR MAX 90",
+          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-W_AIR_MAX_90-WHITE_PARTICLE_GREY_ROSE_BLACK-2.jpg",
+          "category": "Women, Sport, Sneaker",
           "brand": "NIKE",
-          "color": "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
-          "price": 2500000,
-          "size": 39,
+          "colour": "WHITE/PARTICLE GREY-ROSE-BLACK",
+          "price": 1987300,
+          "stock": [
+            {
+              "code": 38,
+              "total": 2
+            },
+            {
+              "code": 39,
+              "total": 1
+            },
+            {
+              "code": 40,
+              "total": 0
+            },
+            {
+              "code": 41,
+              "total": 3
+            },
+            {
+              "code": 42,
+              "total": 2
+            }
+          ],
+          "size": 41,
           "qty": 1,
-          "total": 2500000
+          "totalPrice": 1987300,
+          "total": 1987300
         }
       ],
       "id": 1
     },
     {
-      "userID": 3,
-      "date": "7/6/2020, 2:52:22 PM",
-      "total": 3000000,
-      "products": [
-        {
-          "name": "JORDAN WESTBROOK ONE TAKE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/JORDAN_WESTBROOK_ONE_TAKE-WHITE_WHITE_BLACK_RAGE_GREEN-1.jpg",
-          "brand": "JORDAN",
-          "color": "WHITE/WHITE-BLACK-RAGE GREEN",
-          "price": 1500000,
-          "size": 41,
-          "qty": 2,
-          "total": 3000000
-        }
-      ],
-      "id": 2
-    },
-    {
-      "userID": 2,
-      "date": "7/6/2020, 2:53:01 PM",
-      "total": 5340000,
-      "products": [
-        {
-          "name": "NIKE KYRIE 6",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-KYRIE_6-WHITE_BLUE_FURY_OPTI_YELLOW_DIGITAL_PINK-1.jpg",
-          "brand": "NIKE",
-          "color": "WHITE/BLUE FURY-OPTI YELLOW-DIGITAL PINK",
-          "price": 1780000,
-          "size": 40,
-          "qty": 3,
-          "total": 5340000
-        }
-      ],
-      "id": 3
-    },
-    {
-      "userID": 3,
-      "date": "7/6/2020, 4:36:46 PM",
-      "total": 6860000,
-      "products": [
-        {
-          "name": "JORDAN WESTBROOK ONE TAKE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/JORDAN_WESTBROOK_ONE_TAKE-WHITE_WHITE_BLACK_RAGE_GREEN-1.jpg",
-          "brand": "JORDAN",
-          "color": "WHITE/WHITE-BLACK-RAGE GREEN",
-          "price": 1500000,
-          "size": 39,
-          "qty": 1,
-          "total": 1500000
-        },
-        {
-          "name": "JORDAN AIR JORDAN 14 RETRO",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/Air_Jordan_14_Retro-BLACK_GYM_RED_WHITE_OFF_WHITE-1.jpg",
-          "brand": "JORDAN",
-          "color": "BLACK/GYM RED-WHITE-OFF WHITE",
-          "price": 2680000,
-          "size": 39,
-          "qty": 2,
-          "total": 5360000
-        }
-      ],
-      "id": 4
-    },
-    {
-      "userID": 3,
-      "date": "7/6/2020, 4:37:52 PM",
-      "total": 1987300,
-      "products": [
-        {
-          "name": "NIKE W AIR MAX 90",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-W_AIR_MAX_90-WHITE_PARTICLE_GREY_ROSE_BLACK-1.jpg",
-          "brand": "NIKE",
-          "color": "WHITE/PARTICLE GREY-ROSE-BLACK",
-          "price": 1987300,
-          "size": 39,
-          "qty": 1,
-          "total": 1987300
-        }
-      ],
-      "id": 5
-    },
-    {
-      "userID": 2,
-      "date": "7/6/2020, 4:39:10 PM",
-      "total": 9715906,
-      "products": [
-        {
-          "name": "NIKE AIR ZOOM-TYPE",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/nike-AIR_ZOOM_TYPE-BLACK_SUMMIT_WHITE_MENTA_ORANGE_TRANCE-1.jpg",
-          "brand": "NIKE",
-          "color": "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
-          "price": 2500000,
-          "size": 39,
-          "qty": 2,
-          "total": 5000000
-        },
-        {
-          "name": "VANS UA ERA (MIX & MATCH)",
-          "image": "https://kickz.akamaized.net/en/media/images/p/1200/vans-UA_Era_Mix__Match-cadmium_yellow_tidepool-1.jpg",
-          "brand": "VANS",
-          "color": "cadmium yellow/tidepool",
-          "price": 678956,
-          "size": 40,
-          "qty": 1,
-          "total": 678956
-        },
+      "username": "mariejane",
+      "date": "12/11/2020, 3:33:56 PM",
+      "total": 3660520,
+      "product": [
         {
           "name": "ADIDAS PERFORMANCE MARQUEE MID - VEGAS",
           "image": "https://kickz.akamaized.net/en/media/images/p/1200/adidas_performance-MARQUEE_MID_VEGAS-legend_ink_ftwr_white_flash_orange-1.jpg",
+          "category": "Man, Sport, Basketball",
           "brand": "ADIDAS",
-          "color": "legend ink/ftwr white/flash orange",
+          "colour": "legend ink/ftwr white/flash orange",
           "price": 1345650,
-          "size": 39,
-          "qty": 3,
-          "total": 4036950
+          "stock": [
+            {
+              "code": 38,
+              "total": 7
+            },
+            {
+              "code": 39,
+              "total": 9
+            },
+            {
+              "code": 40,
+              "total": 10
+            },
+            {
+              "code": 41,
+              "total": 3
+            },
+            {
+              "code": 42,
+              "total": 0
+            }
+          ],
+          "size": 40,
+          "qty": 1,
+          "totalPrice": 1345650
+        },
+        {
+          "name": "PUMA CLYDE HARDWOOD RETRO",
+          "image": "https://kickz.akamaized.net/en/media/images/p/1200/puma-Clyde_Hardwood_Retro-Puma_White_Orange_Pop-2.jpg",
+          "category": "Man, Sport, Basketball",
+          "brand": "PUMA",
+          "colour": "Puma White-Orange Pop",
+          "price": 2314870,
+          "stock": [
+            {
+              "code": 38,
+              "total": 6
+            },
+            {
+              "code": 39,
+              "total": 3
+            },
+            {
+              "code": 40,
+              "total": 2
+            },
+            {
+              "code": 41,
+              "total": 0
+            },
+            {
+              "code": 42,
+              "total": 1
+            }
+          ],
+          "size": 40,
+          "qty": 1,
+          "totalPrice": 2314870
         }
       ],
-      "id": 6
+      "id": 2
     }
   ]
 }

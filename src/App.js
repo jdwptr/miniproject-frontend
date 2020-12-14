@@ -17,6 +17,7 @@ import Login from './pages/login'
 import Register from './pages/register'
 import DetailBeli from './pages/detailbeli'
 import cartPage from './pages/cartpage'
+import History from './pages/history'
 import Axios from 'axios'
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
             <Route path='/register' component={Register}/>
             <Route path='/detail' component={DetailBeli}/>
             <Route path='/cart' component={cartPage}/>
+            <Route path='/history' component={History}/>
           </Switch>
       </div>
     )
