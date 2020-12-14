@@ -17,7 +17,6 @@ class cartPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            dataProd: {},
             image: '',
             selectedSize: null,
             size: null,
@@ -30,7 +29,9 @@ class cartPage extends React.Component {
             passErr: false,
             payErr: false,
             emptyCart: false,
-            toHistory: false
+            toHistory: false,
+            prodCart: [],
+            prodCartStock: []
         }
     }
 
@@ -40,15 +41,34 @@ class cartPage extends React.Component {
         // dlm console.log liat yg props, trs location, terus di search: ?id=5
         // console.log(this)
         // taruh console.log(this) nya di render
-        Axios.get(`http://localhost:2000/products${this.props.location.search}`)
-            .then((res) => {
-                // res.data nya array karena ngambil pake query
-                // console.log(res.data[0].images[1])
-                this.setState({ dataProd: res.data[0], image: res.data[0].images[1]})
-                // this.setState({ stok: res.data[0].stock[0]})
-                // console.log(res.data[0].stock[0])
-            })
-            .catch((err) => console.log(err))
+        let nameItemCart= []
+        this.props.cart.map ((item, index) => {
+           nameItemCart.push(item.name)
+        })
+        console.log(nameItemCart)
+
+        let prodCart= []
+
+        nameItemCart.map ((item, index) => {
+            Axios.get (`http://localhost:2000/products?name=${item}`)
+                .then ((res) => {
+                    prodCart.push(res.data[0])
+                })
+                .catch ((err) => console.log(err))
+        })
+        console.log(prodCart)
+
+        this.setState({prodCart: prodCart})
+       
+        // Axios.get(`http://localhost:2000/products${this.props.location.search}`)
+        //     .then((res) => {
+        //         // res.data nya array karena ngambil pake query
+        //         // console.log(res.data[0].images[1])
+        //         this.setState({ dataProd: res.data[0], image: res.data[0].images[1]})
+        //         // this.setState({ stok: res.data[0].stock[0]})
+        //         // console.log(res.data[0].stock[0])
+        //     })
+        //     .catch((err) => console.log(err))
     }
 
     btnDelete = (index) => {
@@ -136,7 +156,7 @@ class cartPage extends React.Component {
     }
 
     renderTbody = () => {
-        const { dataProd, selectedSize, stok } = this.state
+        const { prodCart, selectedSize, stok } = this.state
         return (
             <tbody style={styles.tbody}>
                 {this.props.cart.map((item, index) => {
@@ -153,18 +173,18 @@ class cartPage extends React.Component {
                                     <div>
                                         {/* dibikin ternary krn pertama kali jalan dataProd masih kosong */}
                                         {/* button size kalo di klik nampilin stok dibawah */}
-                                        {(dataProd.stock || []).map((item, index) => {
+                                        {(prodCart.map || [])((item, index) => {
                                             return (
                                                 <Button
                                                     key={index}
                                                     variant='dark'
-                                                    onClick={() => this.setState({ size: item.code, selectedSize: index, stok: item.total })}
+                                                    onClick={() => this.setState({ size: item.stock.code, selectedSize: index, stok: item.stock.total })}
                                                     style={{
                                                         backgroundColor: selectedSize === index ? '#ffffff' : '#242423',
                                                         color: selectedSize === index ? '#000000' : '#ffffff'
                                                     }}
                                                 >
-                                                    {item.code}
+                                                    {item.stock.code}
                                                 </Button>
                                             )
                                         })}
@@ -298,6 +318,7 @@ class cartPage extends React.Component {
     }
 
     render() {
+        // console.log(this.state.size, this.state.stok, this.props.location.search)
         const {reqPay, reqPass, passErr, payErr, emptyCart, toHistory} = this.state
         // console.log(this.state.selectIndex)
 
