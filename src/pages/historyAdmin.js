@@ -1,7 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { connect } from 'react-router-dom'
+
 import {
     Table,
     Accordion,
@@ -9,42 +9,29 @@ import {
     Card
 } from 'react-bootstrap'
 
-// import action nya
-// ACTION TARO DI CONNECT KALO MAU DIPAKE DI COMPONENT DIDMOUT
-import { getHistory } from '../action'
-
-class History extends React.Component {
+class HistoryAdmin extends React.Component {
+    constructor (props) {
+        super (props)
+        this.state= {
+            data: []
+        }
+    }
     componentDidMount() {
-        Axios.get(`http://localhost:2000/history?username=${this.props.username}`)
+        Axios.get(`http://localhost:2000/history`)
             .then((res) => {
                 // NOTE
-                // kalo dah dapet masukkin data ke redux, PAKAI CONNECT
-                // ACION TARO DI CONNECT KALO MAU DIPAKE DI COMPNENT DIDMOUT
                 console.log(res.data)
 
                 // pake res.data aja krn mau ngirim seluruh isi array history, gaperlu pake index
-                this.props.getHistory(res.data)
+                this.setState({data: res.data})
             })
             .catch((err) => console.log(err))
     }
 
-    // renderThead = () => {
-    //     return (
-    //         <thead>
-    //             <tr>
-    //                 <td>#</td>
-    //                 <td>USERNAME :</td>
-    //                 <td>DATE :</td>
-    //                 <td>TOTAL :</td>
-    //             </tr>
-    //         </thead>
-    //     )
-    // }
-
     renderAccordion = () => {
         return (
             <Accordion>
-                {this.props.history.map((item, index) => {
+                {this.state.data.map((item, index) => {
                     return (
                         <Card>
                             <Accordion.Toggle as={Card.Header} variant="link" eventKey={index + 1}>
@@ -90,13 +77,9 @@ class History extends React.Component {
     }
 
     render() {
-        // console.log(this.props.history)
-
-        if (!this.props.username) return <Redirect to='/login'/>
-
         return (
             <div style={styles.container}>
-                <h1>TRANSACTION HISTORY</h1>
+                <h1>ADMIN TRANSACTION HISTORY</h1>
                 {this.renderAccordion()}
             </div>
         )
@@ -115,12 +98,4 @@ const styles = {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        history: state.history,
-        username: state.user.username
-    }
-}
-
-export default connect(mapStateToProps, { getHistory })(History)
-// bikin redux history di reducer & action
+export default HistoryAdmin

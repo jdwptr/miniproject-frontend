@@ -1,4 +1,5 @@
 import React from 'react'
+import Axios from 'axios'
 
 // import components
 import Navigation from './components/navbar'
@@ -19,7 +20,8 @@ import Register from './pages/register'
 import DetailBeli from './pages/detailbeli'
 import cartPage from './pages/cartpage'
 import History from './pages/history'
-import Axios from 'axios'
+import Error from './pages/error'
+import HistoryAdmin from './pages/historyAdmin'
 
 class App extends React.Component {
   // ini tempat u/ ngekeep login nya di localstorage jd kesimpen
@@ -40,6 +42,23 @@ class App extends React.Component {
   }
 
   render () {
+    // console.log(this.props.role)
+    if (this.props.role === 'admin') {
+      return (
+        <div>
+          <Navigation/>
+          <Switch>
+            <Route path= '/' component={Home} exact/>
+            <Route path='/login' component={Login}/>
+            <Route path='/register' component={Register}/>
+            <Route path='/detail' component={DetailBeli}/>
+            <Route path='/history_adm' component={HistoryAdmin}/>
+            <Route path='*' component={Error}/>
+          </Switch>
+        </div>
+      )
+    }
+    
     return (
       <div>
         <Navigation/>
@@ -50,6 +69,7 @@ class App extends React.Component {
             <Route path='/detail' component={DetailBeli}/>
             <Route path='/cart' component={cartPage}/>
             <Route path='/history' component={History}/>
+            <Route path='*' component={Error}/>
           </Switch>
       </div>
     )
@@ -58,7 +78,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    username: state.user.username
+    username: state.user.username,
+    role: state.user.role
   }
 }
 

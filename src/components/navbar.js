@@ -49,12 +49,12 @@ class Navigation extends React.Component {
                             ?
                             <div>
                                 <Dropdown.Item onClick={this.btnLogout}>Log out</Dropdown.Item>
-                                <Dropdown.Item as={Link} to="/history">History</Dropdown.Item>
+                                <Dropdown.Item as={Link} to={this.props.role === 'user' ? '/history' : '/history_adm'}>History</Dropdown.Item>
                             </div>
                             :
                             <>
-                            <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
-                            <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/Login">Login</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/Register">Register</Dropdown.Item>
                             </>
                             } 
                         </Dropdown.Menu>
@@ -66,7 +66,8 @@ class Navigation extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        username: state.user.username
+        username: state.user.username,
+        role: state.user.role
     }
 }
 
