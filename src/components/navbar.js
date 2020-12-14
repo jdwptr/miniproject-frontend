@@ -35,7 +35,7 @@ class Navigation extends React.Component {
                         <Nav.Link as={Link} to='/' style={{color: 'black'}}>Home</Nav.Link>
                     </Nav>
                     <Nav className="mr-auto">
-                        <Nav.Link as={Link} to='/cart' style={{color: 'black', marginRight: '120px', marginLeft: '0px'}}><i class="fas fa-shopping-cart"></i>Cart</Nav.Link>
+                        <Nav.Link as={Link} to='/cart' style={{color: 'black', marginRight: '120px', marginLeft: '0px'}}><i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 <Dropdown style={{marginLeft: '500px'}}>

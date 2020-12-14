@@ -9,7 +9,8 @@ import {Switch, Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // import login dari actions
-import { login } from './action/userAction'
+import { login } from './action'
+import { getHistory } from './action'
 
 // import halaman dari pages
 import Home from './pages/home'
@@ -27,9 +28,17 @@ class App extends React.Component {
       .then((res) => {
         console.log(res.data[0])
         this.props.login(res.data[0])
+
+        Axios.get(`http://localhost:2000/history?username=${this.props.username}`)
+        .then((res) => {
+          console.log(res.data)
+          this.props.getHistory(res.data)
+        })
+        .catch((err) => console.log(err))
       })
       .catch((err) => console.log(err))
   }
+
   render () {
     return (
       <div>
@@ -47,4 +56,10 @@ class App extends React.Component {
   }
 }
 
-export default connect (null, {login}) (App)
+const mapStateToProps = (state) => {
+  return {
+    username: state.user.username
+  }
+}
+
+export default connect (mapStateToProps, {login, getHistory}) (App)

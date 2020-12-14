@@ -177,12 +177,12 @@ class cartPage extends React.Component {
                                     {/* <Button onClick={() => this.btnMinus}> */}
                                     <Button
                                         onClick={this.btnMinus}>
-                                        <i class="far fa-minus-square"></i>
+                                        <i className="far fa-minus-square"></i>
                                     </Button>
                                     <Form.Control min={0} value={this.state.newQty} style={{ width: '50px' }} onChange={(e) => this.changeQty(e)} />
                                     <Button
                                         onClick={() => this.setState({ newQty: parseInt(this.state.newQty) + 1 })}>
-                                        <i class="far fa-plus-square"></i>
+                                        <i className="far fa-plus-square"></i>
                                     </Button>
                                 </td>
                                 <td>IDR {(this.state.newQty * item.price).toLocaleString()}</td>
