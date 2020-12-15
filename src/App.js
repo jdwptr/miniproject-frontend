@@ -25,6 +25,10 @@ import HistoryAdmin from './pages/historyAdmin'
 
 class App extends React.Component {
   // ini tempat u/ ngekeep login nya di localstorage jd kesimpen
+
+  // DITARO SI HISTORY SM LOGIN DISINI KRN MAU DIPAKE TERUS JD BIAR DIREFRESH KRN ADA, KRN DIPANGGIL BERKALI KALI
+  // KRN APP.JS YG DIPANGGIL TIAP KALI DI REFRESH
+  // JADI AXIOS >GET NYA DISINI JUGA SUPAYA DISINI KESIMPEN 
   componentDidMount () {
     Axios.get(`http://localhost:2000/users?username=${localStorage.getItem('username')}`)
       .then((res) => {

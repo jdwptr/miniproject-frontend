@@ -115,6 +115,7 @@ const styles = {
     }
 }
 
+// map state to props itu untuk nge get data yg mau kita pakai dr redux
 const mapStateToProps = (state) => {
     return {
         history: state.history,
@@ -122,5 +123,8 @@ const mapStateToProps = (state) => {
     }
 }
 
+// connect action di export default connect (null, {getHistory}) (History)
+// null kalo misal gada data yg mau diambil dr redux
+// kalo ada yg mau diambil, jadi (mapStateToProps, {getHistory}) (History)
 export default connect(mapStateToProps, { getHistory })(History)
 // bikin redux history di reducer & action
