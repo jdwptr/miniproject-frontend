@@ -173,12 +173,12 @@ class cartPage extends React.Component {
                                     <div>
                                         {/* dibikin ternary krn pertama kali jalan dataProd masih kosong */}
                                         {/* button size kalo di klik nampilin stok dibawah */}
-                                        {(prodCart.map || [])((item, index) => {
+                                        {(prodCart || []).map((item, index) => {
                                             return (
                                                 <Button
                                                     key={index}
                                                     variant='dark'
-                                                    onClick={() => this.setState({ size: item.stock.code, selectedSize: index, stok: item.stock.total })}
+                                                    onClick={() => this.setState({ size: item.code, selectedSize: index, stok: item.total })}
                                                     style={{
                                                         backgroundColor: selectedSize === index ? '#ffffff' : '#242423',
                                                         color: selectedSize === index ? '#000000' : '#ffffff'
