@@ -13,7 +13,7 @@ import {
 
 import { connect } from 'react-redux'
 
-class cartPage extends React.Component {
+class CartPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -291,7 +291,7 @@ class cartPage extends React.Component {
             .then((res) => {
                 console.log(res.data)
                 
-                // NOTE UPDATE REDUX
+                // NOTE UPDATE REDUX, makanya login nya dipanggil lagi
                 Axios.get (`http://localhost:2000/users/${this.props.id}`)
                 .then((res) => {
                     console.log(res.data)
@@ -482,4 +482,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { login })(cartPage)
+export default connect(mapStateToProps, { login })(CartPage)

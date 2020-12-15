@@ -18,12 +18,16 @@ import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
 import DetailBeli from './pages/detailbeli'
-import cartPage from './pages/cartpage'
+import CartPage from './pages/cartpage'
 import History from './pages/history'
 import Error from './pages/error'
 import HistoryAdmin from './pages/historyAdmin'
 
 class App extends React.Component {
+  // REVIEW
+  // KALO AMBIL PAKAI QUERY =  ARRAY
+  // KALO AMBIL PAKAI PARAMS = OBJECT
+
   // ini tempat u/ ngekeep login nya di localstorage jd kesimpen
 
   // DITARO SI HISTORY SM LOGIN DISINI KRN MAU DIPAKE TERUS JD BIAR DIREFRESH KRN ADA, KRN DIPANGGIL BERKALI KALI
@@ -71,7 +75,7 @@ class App extends React.Component {
             <Route path='/login' component={Login}/>
             <Route path='/register' component={Register}/>
             <Route path='/detail' component={DetailBeli}/>
-            <Route path='/cart' component={cartPage}/>
+            <Route path='/cart' component={CartPage}/>
             <Route path='/history' component={History}/>
             <Route path='*' component={Error}/>
           </Switch>

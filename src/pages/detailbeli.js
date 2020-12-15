@@ -35,7 +35,7 @@ class DetailBeli extends React.Component {
     componentDidMount() {
         // NOTE
         // supaya tiap di klik buy per item, pindah ke detail yg per item
-        // dlm console.log liat yg props, trs location, terus di search: ?id=5
+        // dlm console.log di browserliat yg props, trs location, terus di search: ?id=5
         // console.log(this)
         // taruh console.log(this) nya di render
         Axios.get(`http://localhost:2000/products${this.props.location.search}`)
@@ -87,6 +87,7 @@ class DetailBeli extends React.Component {
 
     render() {
         // OBJECT DESTRUCTURING, KARENA BANYAK MAU DIPAKE
+        console.log(this)
         const { dataProd, image, selectedSize, stok, total, toLogin, cartErr, toCart } = this.state
         // console.log(this.state.dataProd)
         // console.log(this.state.dataProd.images)

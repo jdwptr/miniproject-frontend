@@ -48,7 +48,7 @@ class History extends React.Component {
                     return (
                         <Card>
                             <Accordion.Toggle as={Card.Header} variant="link" eventKey={index + 1}>
-                                DATE: {item.date}, TOTAL PURCHASE: {item.total.toLocaleString()}
+                                USER: {item.username}, DATE: {item.date}, TOTAL PURCHASE: {item.total.toLocaleString()}
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey={index + 1}>
                                 <Table striped bordered hover variant='dark'>

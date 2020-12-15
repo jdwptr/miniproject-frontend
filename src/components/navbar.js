@@ -48,7 +48,7 @@ class Navigation extends React.Component {
                             {this.props.username
                             ?
                             <div>
-                                <Dropdown.Item onClick={this.btnLogout}>Log out</Dropdown.Item>
+                                <Dropdown.Item onClick={this.btnLogout} as={Link} to="/login">Log out</Dropdown.Item>
                                 <Dropdown.Item as={Link} to={this.props.role === 'user' ? '/history' : '/history_adm'}>History</Dropdown.Item>
                             </div>
                             :
