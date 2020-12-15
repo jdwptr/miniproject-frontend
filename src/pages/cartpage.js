@@ -48,7 +48,6 @@ class CartPage extends React.Component {
         console.log(nameItemCart)
 
         let prodCart= []
-
         nameItemCart.map ((item, index) => {
             Axios.get (`http://localhost:2000/products?name=${item}`)
                 .then ((res) => {
